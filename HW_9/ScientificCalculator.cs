@@ -76,5 +76,36 @@ namespace HW_9
             }
             Result = sum / 3;
         }
+
+        public void CalculateSquare(double argument1)
+        {
+            if (argument1 < 0)
+            {
+                Message = "Argument should be greater or equal to zero";
+            }
+            else
+            {
+                Result = Math.Sqrt(argument1);
+            }
+        }
+        public void CalculateFactorial(double argument1)
+        {
+            if (argument1 < 0)
+            {
+                Message = "Argument should be greater or equal to zero";
+            }
+            else if (Convert.ToInt32(argument1) == Convert.ToDouble(argument1))
+            {
+                Result = 1;
+                for (int i = 2; i <= argument1; i++)
+                {
+                    Result *= i;
+                }
+            }
+            else
+            {
+                Message = "Argument should be natural number";
+            }
+        }
     }
 }

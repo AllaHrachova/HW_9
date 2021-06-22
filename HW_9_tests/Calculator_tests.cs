@@ -126,5 +126,14 @@ namespace HW_9_tests
             calculator.Divide(TestArgument1, TestArgument2);
             Assert.Positive(calculator.Result);
         }
+
+        [Test]
+        public void TestDivisionByZero()
+        {
+            TestArgument1 = 2;
+            TestArgument2 = 0;
+            calculator.Divide(TestArgument1, TestArgument2);
+            StringAssert.Contains("error encountered", calculator.Message);
+        }
     }
 }
